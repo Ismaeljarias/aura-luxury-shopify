@@ -26,10 +26,65 @@
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
 <style>
   header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
+  }
+
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+  }
+
+  .header__heading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+  }
+
+  .header__heading-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__heading-link .h2 {
+    font-family: 'Noto Serif Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  .header__icons {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header__inline-menu,
+  .header__search,
+  header-drawer {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .header__inline-menu {
+      display: none !important;
+    }
   }
 
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
@@ -48,6 +103,13 @@
 
   .menu-drawer-container {
     display: flex;
+  }
+
+  @media screen and (max-width: 989px) {
+    .menu-drawer {
+      width: 80vw;
+      max-width: 80vw;
+    }
   }
 
   .list-menu {
@@ -94,6 +156,8 @@
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+    background-color: #E8E6E3;
+    border-bottom: 1px solid #D0CEC9;
   }
 
   @media screen and (min-width: 750px) {
@@ -160,6 +224,8 @@
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
+      {%- else -%}
+        <div class="header__heading">
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {%- if settings.logo != blank -%}
@@ -182,11 +248,13 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">{{ section.settings.logo_text | default: shop.name }}</span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
         </h1>
+      {%- else -%}
+        </div>
       {%- endif -%}
     {%- endif -%}
 
@@ -225,7 +293,7 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
+          <span class="h2">{{ section.settings.logo_text | default: shop.name }}</span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -506,6 +574,13 @@
       "default": "middle-left",
       "label": "t:sections.header.settings.logo_position.label",
       "info": "t:sections.header.settings.logo_help.content"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "info": "Text to display as logo when no image logo is uploaded",
+      "default": "AURA"
     },
     {
       "type": "select",

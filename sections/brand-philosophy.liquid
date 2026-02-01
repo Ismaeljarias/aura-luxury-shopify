@@ -1,0 +1,273 @@
+{% comment %}
+  ==============================================================================
+  Brand Philosophy Section
+  ==============================================================================
+  
+  Displays brand philosophy with icon, heading, quote, and value pillars.
+  Perfect for showcasing brand values and mission.
+  
+  ==============================================================================
+{% endcomment %}
+
+<style>
+  .brand-philosophy {
+    padding: 6rem 0;
+    background-color: #FFFFFF;
+  }
+
+  .brand-philosophy__container {
+    max-width: 1200px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .brand-philosophy__icon {
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-philosophy__icon svg {
+    width: 60px;
+    height: 60px;
+    fill: none;
+    stroke: #D4A847;
+    stroke-width: 2;
+  }
+
+  .brand-philosophy__heading {
+    font-family: 'Noto Serif Display', Georgia, serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 2.5rem;
+    color: #000;
+  }
+
+  .brand-philosophy__quote {
+    font-family: 'Noto Serif Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 2rem;
+  }
+
+  .brand-philosophy__divider {
+    display: block !important;
+    width: 60%;
+    height: 1px;
+    background-color: #D0CEC9;
+    margin: 4rem auto;
+  }
+
+  .brand-philosophy__values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+    padding: 0 2rem;
+  }
+
+  .brand-philosophy__value {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .brand-philosophy__value-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+  }
+
+  .brand-philosophy__value-description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .brand-philosophy {
+      padding: 4rem 0;
+    }
+
+    .brand-philosophy__values {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .brand-philosophy__quote {
+      padding: 0 1rem;
+    }
+  }
+</style>
+
+<div class="brand-philosophy">
+  <div class="brand-philosophy__container page-width">
+    {%- if section.settings.show_icon -%}
+      <div class="brand-philosophy__icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l-8 6v8l8 6 8-6V8l-8-6z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 8l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 14v8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 8h16" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="brand-philosophy__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.quote != blank -%}
+      <p class="brand-philosophy__quote">{{ section.settings.quote }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.show_divider -%}
+      <div class="brand-philosophy__divider"></div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="brand-philosophy__values">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'pillar' -%}
+              <div class="brand-philosophy__value" {{ block.shopify_attributes }}>
+                {%- if block.settings.title != blank -%}
+                  <h3 class="brand-philosophy__value-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="brand-philosophy__value-description">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand philosophy",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show diamond icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The AURA Philosophy"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote text",
+      "default": "We believe in the longevity of style. In a world of fast trends, we choose the slow path—perfection through patience."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show divider line",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F3F0"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 96
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Brand pillar",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "TRACEABLE"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Complete transparency from the farm to your wardrobe."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand philosophy",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "TRACEABLE",
+            "description": "Complete transparency from the farm to your wardrobe."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "ETHICAL",
+            "description": "Sourced from certified cruelty-free nomadic herders."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "PERMANENT",
+            "description": "Garments designed to last generations, not seasons."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

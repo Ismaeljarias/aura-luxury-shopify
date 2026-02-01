@@ -1,0 +1,404 @@
+{% comment %}
+  ==============================================================================
+  AURA Society Newsletter Section
+  ==============================================================================
+  
+  Custom newsletter section with elegant horizontal layout
+  
+  ==============================================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
+
+<style>
+  .aura-society {
+    background-color: {{ section.settings.background_color }};
+    padding: 6rem 0;
+  }
+
+  .aura-society__container {
+    max-width: 1400px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .aura-society__content {
+    max-width: 500px;
+  }
+
+  .aura-society__heading {
+    font-family: 'Noto Serif Display', Georgia, serif;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 1rem 0;
+  }
+
+  .aura-society__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .aura-society__form {
+    width: 100%;
+  }
+
+  .aura-society__form-wrapper {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    border-bottom: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.3 }};
+  }
+
+  .aura-society__field {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: {{ section.settings.text_color }};
+    outline: none;
+  }
+
+  .aura-society__field::placeholder {
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.5 }};
+  }
+
+  .aura-society__button {
+    padding: 1.25rem 3.5rem;
+    background-color: {{ section.settings.button_background }};
+    color: {{ section.settings.button_text_color }};
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .aura-society__button:hover {
+    background-color: #D4A847;
+  }
+
+  .aura-society__message {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .aura-society__message--success {
+    color: #2D7F3E;
+    opacity: 1;
+  }
+
+  .aura-society__message--error {
+    color: #D32F2F;
+    opacity: 1;
+  }
+
+  /* Tablet responsive */
+  @media screen and (max-width: 1199px) {
+    .aura-society__container {
+      gap: 3rem;
+    }
+
+    .aura-society__heading {
+      font-size: clamp(1.75rem, 2.5vw, 2rem);
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .aura-society {
+      padding: 4rem 0;
+    }
+
+    .aura-society__container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 0 2rem;
+    }
+
+    .aura-society__content {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .aura-society__form {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .aura-society__heading {
+      font-size: 1.75rem;
+    }
+
+    .aura-society__description {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* Mobile responsive */
+  @media screen and (max-width: 749px) {
+    .aura-society {
+      padding: 3rem 0;
+    }
+
+    .aura-society__container {
+      padding: 0 1.5rem;
+      gap: 2rem;
+    }
+
+    .aura-society__heading {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .aura-society__description {
+      font-size: 0.875rem;
+    }
+
+    .aura-society__form-wrapper {
+      flex-direction: column;
+      border-bottom: none;
+    }
+
+    .aura-society__field {
+      padding: 1rem;
+      border: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.3 }};
+      border-bottom: none;
+    }
+
+    .aura-society__button {
+      width: 100%;
+      padding: 1.25rem;
+      border: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.3 }};
+      border-top: none;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .aura-society__container {
+      padding: 0 1rem;
+    }
+
+    .aura-society__heading {
+      font-size: 1.25rem;
+    }
+
+    .aura-society__field {
+      font-size: 0.9375rem;
+      padding: 0.875rem;
+    }
+
+    .aura-society__button {
+      font-size: 0.8125rem;
+      padding: 1.125rem;
+    }
+  }
+</style>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="aura-society section-{{ section.id }}-padding">
+  <div class="aura-society__container">
+    <div class="aura-society__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="aura-society__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="aura-society__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="aura-society__form">
+      {% form 'customer', id: 'AuraSocietyForm', class: 'aura-society__form-inner' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        
+        <div class="aura-society__form-wrapper">
+          <input
+            id="AuraSocietyEmail--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class="aura-society__field"
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="AuraSociety-error--{{ section.id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="AuraSociety-success--{{ section.id }}"
+            {% endif %}
+            placeholder="{{ section.settings.placeholder }}"
+            required
+          >
+          
+          <button
+            type="submit"
+            class="aura-society__button"
+            name="commit"
+            aria-label="{{ section.settings.button_text }}"
+          >
+            {{ section.settings.button_text }}
+          </button>
+        </div>
+
+        {%- if form.errors -%}
+          <div class="aura-society__message aura-society__message--error" id="AuraSociety-error--{{ section.id }}">
+            {{ form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email }}
+          </div>
+        {%- endif -%}
+
+        {%- if form.posted_successfully? -%}
+          <div class="aura-society__message aura-society__message--success" id="AuraSociety-success--{{ section.id }}">
+            {{ section.settings.success_message }}
+          </div>
+        {%- endif -%}
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AURA Society Newsletter",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The AURA Society"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Be the first to receive invitation-only access to new collections and private events."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Email placeholder",
+      "default": "Email Address"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "JOIN"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you for joining The AURA Society!"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F3F0"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "AURA Society Newsletter",
+      "settings": {
+        "heading": "The AURA Society",
+        "description": "Be the first to receive invitation-only access to new collections and private events.",
+        "placeholder": "Email Address",
+        "button_text": "JOIN",
+        "background_color": "#F5F3F0",
+        "text_color": "#000000",
+        "button_background": "#000000",
+        "button_text_color": "#FFFFFF"
+      }
+    }
+  ]
+}
+{% endschema %}

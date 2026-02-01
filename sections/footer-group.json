@@ -11,6 +11,23 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "aura_society_djHqie": {
+      "type": "aura-society",
+      "name": "AURA Society Newsletter",
+      "settings": {
+        "heading": "The AURA Society",
+        "description": "Be the first to receive invitation-only access to new collections and private events.",
+        "placeholder": "Email Address",
+        "button_text": "JOIN",
+        "success_message": "Thank you for joining The AURA Society!",
+        "background_color": "#f5f3f0",
+        "text_color": "#000000",
+        "button_background": "#000000",
+        "button_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -30,6 +47,7 @@
     }
   },
   "order": [
+    "aura_society_djHqie",
     "footer"
   ]
 }

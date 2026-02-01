@@ -12,11 +12,19 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "preheading_mBYQze": {
+          "type": "preheading",
+          "settings": {
+            "preheading": "AUTUMN // WINTER 2026",
+            "preheading_color": "#ffffff"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "The Essence ofTimelessness",
+            "heading_size": "h0",
+            "heading_color": "#ffffff"
           }
         },
         "button": {
@@ -32,53 +40,134 @@
         }
       },
       "block_order": [
+        "preheading_mBYQze",
         "heading",
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/unnamed.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "rich_text_media_rbjRBz": {
+      "type": "rich-text-media",
+      "blocks": {
+        "quote_3PhHPd": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "<p><em>\"Luxury is not about being noticed, it's about being remembered for the quality that whispers.\"</em></p>",
+            "quote_color": "#000000"
+          }
+        },
+        "text_kNRM8q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our materials are sourced from the historic mills of Biella, Italy. Each thread of grade A cashmere and mulberry silk is selected for its natural luster and enduring softness.</p>",
+            "text_color": "#666666"
+          }
+        },
+        "link_nRMgpn": {
+          "type": "link",
+          "settings": {
+            "link_label": "THE CRAFTSMANSHIP",
+            "link_url": "",
+            "link_color": "#000000"
+          }
+        },
+        "image_8bgPke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/women-1.png"
+          }
+        },
+        "image_J388p8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/women-8.png"
+          }
+        }
+      },
+      "block_order": [
+        "quote_3PhHPd",
+        "text_kNRM8q",
+        "link_nRMgpn",
+        "image_8bgPke",
+        "image_J388p8"
+      ],
+      "name": "Rich text with media",
+      "settings": {
+        "background_color": "#f5f3f0",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
+        "collection_label": "CURATED SELECTION",
+        "heading": "Seasonal Essentials",
         "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
+        "view_all_text": "VIEW ALL",
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "brand_philosophy_HjAxfh": {
+      "type": "brand-philosophy",
+      "blocks": {
+        "pillar_ntNamH": {
+          "type": "pillar",
+          "settings": {
+            "title": "TRACEABLE",
+            "description": "Complete transparency from the farm to your wardrobe."
+          }
+        },
+        "pillar_6jkQwG": {
+          "type": "pillar",
+          "settings": {
+            "title": "ETHICAL",
+            "description": "Sourced from certified cruelty-free nomadic herders."
+          }
+        },
+        "pillar_t973Jx": {
+          "type": "pillar",
+          "settings": {
+            "title": "PERMANENT",
+            "description": "Garments designed to last generations, not seasons."
+          }
+        }
+      },
+      "block_order": [
+        "pillar_ntNamH",
+        "pillar_6jkQwG",
+        "pillar_t973Jx"
+      ],
+      "name": "Brand philosophy",
+      "settings": {
+        "show_icon": true,
+        "heading": "The AURA Philosophy",
+        "quote": "We believe in the longevity of style. In a world of fast trends, we choose the slow path—perfection through patience.",
+        "show_divider": true,
+        "background_color": "#F5F3F0",
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "rich_text_media_rbjRBz",
+    "featured_collection",
+    "brand_philosophy_HjAxfh"
   ]
 }

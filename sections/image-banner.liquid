@@ -8,7 +8,51 @@
   
   ==============================================================================
 {% endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .banner__preheading {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .banner__heading {
+    font-family: 'Noto Serif Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 6vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  
+  .banner__box .button--primary,
+  .banner .button {
+    background-color: #D4A847;
+    color: #000000;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+  
+  .banner__box .button--primary:hover,
+  .banner .button:hover {
+    background-color: #B8903D;
+    transform: translateY(-2px);
+  }
+</style>
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
@@ -126,12 +170,21 @@
     </div>
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
+    <div class="banner__box content-container content-container--full-width-mobile">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
+          {%- when 'preheading' -%}
+            <p
+              class="banner__preheading"
+              style="color: {{ block.settings.preheading_color }};"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.preheading }}
+            </p>
           {%- when 'heading' -%}
             <h2
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+              style="color: {{ block.settings.heading_color }};"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
@@ -372,6 +425,25 @@
   ],
   "blocks": [
     {
+      "type": "preheading",
+      "name": "Pre-heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "preheading",
+          "default": "AUTUMN // WINTER 2026",
+          "label": "Pre-heading text"
+        },
+        {
+          "type": "color",
+          "id": "preheading_color",
+          "label": "Pre-heading color",
+          "default": "#FFFFFF"
+        }
+      ]
+    },
+    {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",
       "limit": 1,
@@ -409,6 +481,12 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading color",
+          "default": "#000000"
         }
       ]
     },
@@ -501,6 +579,9 @@
     {
       "name": "t:sections.image-banner.presets.name",
       "blocks": [
+        {
+          "type": "preheading"
+        },
         {
           "type": "heading"
         },
