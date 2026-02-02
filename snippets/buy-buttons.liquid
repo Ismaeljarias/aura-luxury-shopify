@@ -95,7 +95,11 @@
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {%- if block.settings.custom_button_text != blank -%}
+                  {{ block.settings.custom_button_text }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -105,6 +109,17 @@
           {%- endif -%}
         </div>
       {%- endform -%}
+      
+      {%- comment -%} Secondary Button (e.g., Find in Boutique) {%- endcomment -%}
+      {%- if block.settings.show_secondary_button and block.settings.secondary_button_text != blank -%}
+        <a 
+          href="{{ block.settings.secondary_button_url | default: '#' }}"
+          class="product-form__secondary-button"
+          {% if block.settings.secondary_button_url == blank %}aria-disabled="true"{% endif %}
+        >
+          {{ block.settings.secondary_button_text }}
+        </a>
+      {%- endif -%}
     </product-form>
   {%- else -%}
     <div class="product-form">

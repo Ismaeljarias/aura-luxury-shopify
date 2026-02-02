@@ -19,6 +19,10 @@
       "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link underlined-link\">Log in here</a>",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
+    "breadcrumb": {
+      "home": "Home",
+      "product": "Product"
+    },
     "social": {
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
@@ -178,6 +182,7 @@
       "share": "Share this product",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
+      "size_guide": "Size guide",
       "vendor": "Vendor",
       "value_unavailable": "{{ option_value }} - Unavailable",
       "variant_sold_out_or_unavailable": "Variant sold out or unavailable",

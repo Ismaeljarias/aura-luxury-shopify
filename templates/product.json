@@ -31,7 +31,9 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square",
+            "show_size_guide": true,
+            "size_guide_url": ""
           }
         },
         "quantity_selector": {
@@ -41,13 +43,37 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "custom_button_text": "Add to collection",
+            "show_secondary_button": true,
+            "secondary_button_text": "Find in boutique",
+            "secondary_button_url": ""
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "collapsible_tab_composition": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Composition",
+            "icon": "leaf",
+            "content": "<p>Hand-stitched in our Italian atelier, this overcoat is crafted from the finest Mongolian cashmere, offering an unparalleled softness and a structured, timeless silhouette. A masterpiece of silent luxury, designed for longevity across generations.</p>"
+          }
+        },
+        "collapsible_tab_care": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care instructions",
+            "icon": "washing",
+            "content": "<p>Dry clean only. Store in a breathable garment bag. Avoid prolonged exposure to direct sunlight.</p>"
+          }
+        },
+        "collapsible_tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & returns",
+            "icon": "truck",
+            "content": "<p>Complimentary shipping on all orders. Free returns within 30 days. All items are carefully packaged in our signature boxes.</p>"
+          }
         },
         "share": {
           "type": "share",
@@ -61,9 +87,10 @@
         "title",
         "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
-        "description",
+        "collapsible_tab_composition",
+        "collapsible_tab_care",
+        "collapsible_tab_shipping",
         "share"
       ],
       "settings": {

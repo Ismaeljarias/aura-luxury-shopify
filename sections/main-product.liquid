@@ -25,11 +25,13 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'aura-luxury-product.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
+    {{ 'aura-luxury-variants.css' | asset_url | stylesheet_tag }}
   {% endunless %}
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -94,6 +96,20 @@
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+          {%- comment -%} Breadcrumb Navigation {%- endcomment -%}
+          <nav class="product__breadcrumb" aria-label="{{ 'general.breadcrumb' | t }}">
+            <a href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+            <span class="product__breadcrumb-separator">/</span>
+            {%- if collection -%}
+              <a href="{{ collection.url }}">{{ collection.title }}</a>
+              <span class="product__breadcrumb-separator">/</span>
+            {%- elsif product.collections.size > 0 -%}
+              <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a>
+              <span class="product__breadcrumb-separator">/</span>
+            {%- endif -%}
+            <span>{{ product.type | default: 'general.breadcrumb.product' | t }}</span>
+          </nav>
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
@@ -914,6 +930,22 @@
             }
           ],
           "default": "circle"
+        },
+        {
+          "type": "header",
+          "content": "Size guide"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_size_guide",
+          "default": false,
+          "label": "Show size guide link"
+        },
+        {
+          "type": "url",
+          "id": "size_guide_url",
+          "label": "Size guide link",
+          "info": "Link to size guide page or popup"
         }
       ]
     },
@@ -935,6 +967,35 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        },
+        {
+          "type": "header",
+          "content": "Button customization"
+        },
+        {
+          "type": "text",
+          "id": "custom_button_text",
+          "label": "Primary button text",
+          "info": "Leave blank to use default 'Add to cart' text",
+          "placeholder": "Add to collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_secondary_button",
+          "default": false,
+          "label": "Show secondary button"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_text",
+          "label": "Secondary button text",
+          "default": "Find in boutique"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Secondary button link",
+          "info": "Link to store locator or contact page"
         }
       ]
     },

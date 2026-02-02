@@ -1,0 +1,309 @@
+/*
+ * ==============================================================================
+ * Aura Luxury - Product Page Styles
+ * ==============================================================================
+ * Custom luxury styling for product pages
+ * Extends Dawn theme with refined typography, spacing, and layout
+ * ==============================================================================
+ */
+
+/* ==============================================================================
+   Typography & Refinements
+   ============================================================================== */
+
+.product {
+  --luxury-spacing: 4rem;
+  --luxury-spacing-mobile: 2rem;
+}
+
+/* Product Title */
+.product__title h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .product__title h1 {
+    font-size: 3.2rem;
+  }
+}
+
+/* Breadcrumb Navigation */
+.product__breadcrumb {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.product__breadcrumb a {
+  color: rgba(var(--color-foreground), 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product__breadcrumb a:hover {
+  color: rgba(var(--color-foreground), 1);
+}
+
+.product__breadcrumb-separator {
+  margin: 0 0.8rem;
+}
+
+/* Product Text (Category/Vendor) */
+.product__text.caption-with-letter-spacing {
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+/* Price */
+.price--large .price-item {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Product Description */
+.product__description {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: rgba(var(--color-foreground), 0.85);
+  margin-top: 2rem;
+}
+
+/* ==============================================================================
+   Layout Refinements - 50/50 Split with Gap
+   ============================================================================== */
+
+/* Clean 50/50 layout with gap */
+.product__media-wrapper {
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .product .grid--2-col-tablet {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .product__media-wrapper,
+  .product__info-wrapper {
+    align-self: flex-start;
+  }
+
+  .product__info-wrapper {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .product__media-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .product .grid--2-col-tablet {
+    column-gap: 6rem;
+  }
+}
+
+.product.product--stacked .grid--2-col-tablet {
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+.product__info-container {
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .product__info-container {
+    padding: 0;
+  }
+}
+
+/* Spacing between blocks */
+.product__info-container > * + * {
+  margin-top: 2rem;
+}
+
+.product__info-container > .product__title {
+  margin-top: 0;
+}
+
+/* ==============================================================================
+   Variant Selectors
+   ============================================================================== */
+
+/* Color Selector Label */
+.product-form__input.product-form__input--swatch legend {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+/* Size Selector Label */
+.product-form__input.product-form__input--pill legend {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Size Guide Link */
+.size-guide-link {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: rgba(var(--color-foreground), 0.7);
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.size-guide-link:hover {
+  color: rgba(var(--color-foreground), 1);
+}
+
+/* ==============================================================================
+   Buttons
+   ============================================================================== */
+
+/* Primary CTA Button */
+.product-form__submit {
+  font-size: 1.3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1.8rem 4rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.product-form__submit:hover:not([disabled]) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--color-foreground), 0.15);
+}
+
+/* Secondary Button (Find in Boutique) */
+.product-form__secondary-button {
+  display: block;
+  width: 100%;
+  font-size: 1.3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 1.8rem 4rem;
+  border: 1px solid rgba(var(--color-foreground), 0.3);
+  background: transparent;
+  color: rgba(var(--color-foreground), 1);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1.2rem;
+}
+
+.product-form__secondary-button:hover {
+  border-color: rgba(var(--color-foreground), 1);
+  background: rgba(var(--color-foreground), 0.05);
+}
+
+/* ==============================================================================
+   Collapsible Details
+   ============================================================================== */
+
+.product__accordion {
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  margin-top: 3rem;
+  max-width: 100%;
+}
+
+.product__accordion details {
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+}
+
+.product__accordion summary {
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.product__accordion .accordion__content {
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.8);
+  max-width: 65ch;
+}
+
+@media screen and (max-width: 749px) {
+  .product__accordion .accordion__content {
+    max-width: 100%;
+  }
+}
+
+/* ==============================================================================
+   Responsive Adjustments
+   ============================================================================== */
+
+@media screen and (max-width: 749px) {
+  .product__info-container {
+    padding: 0;
+  }
+  
+  .product__media-wrapper {
+    padding: 0;
+  }
+  
+  .product__title h1 {
+    font-size: 2.4rem;
+  }
+  
+  .price--large .price-item {
+    font-size: 1.8rem;
+  }
+  
+  .product-form__submit,
+  .product-form__secondary-button {
+    font-size: 1.2rem;
+    padding: 1.6rem 3rem;
+  }
+}
+
+/* ============================================================================== 
+   Media Gallery Adjustments
+   ============================================================================== */
+
+.product__media-wrapper {
+  padding: 0;
+}
+
+
+/* Ensure images maintain luxury aesthetic */
+.product__media-item {
+  margin-bottom: 1rem;
+}
+
+.product__media-item img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}

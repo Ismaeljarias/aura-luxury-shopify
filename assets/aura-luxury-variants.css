@@ -1,0 +1,183 @@
+/*
+ * ==============================================================================
+ * Aura Luxury - Variant Selector Styles
+ * ==============================================================================
+ * Custom styling for color swatches and size selectors
+ * ==============================================================================
+ */
+
+/* ==============================================================================
+   Color Swatches
+   ============================================================================== */
+
+.product-form__input--swatch {
+  margin: 2rem 0;
+}
+
+.product-form__input--swatch .variant-input-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Custom square color swatches */
+.product-form__input--swatch input[type="radio"] + label {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-form__input--swatch input[type="radio"] + label:hover {
+  border-color: rgba(var(--color-foreground), 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(var(--color-foreground), 0.1);
+}
+
+/* Active state */
+.product-form__input--swatch input[type="radio"]:checked + label {
+  border-color: rgba(var(--color-foreground), 1);
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(var(--color-foreground), 0.1);
+}
+
+/* Color swatch circle inside square */
+.product-form__input--swatch .swatch {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+/* Hide radio button */
+.product-form__input--swatch input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==============================================================================
+   Size Selector
+   ============================================================================== */
+
+.product-form__input--pill {
+  margin: 2rem 0;
+}
+
+.product-form__input--pill .variant-input-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Size buttons - Small Squares */
+.product-form__input--pill input[type="radio"] + label {
+  width: 5rem;
+  height: 5rem;
+  padding: 0;
+  border: 1px solid rgba(var(--color-foreground), 0.3);
+  background: transparent;
+  color: rgba(var(--color-foreground), 1);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.product-form__input--pill input[type="radio"] + label:hover {
+  border-color: rgba(var(--color-foreground), 0.8);
+  background: rgba(var(--color-foreground), 0.03);
+}
+
+/* Selected size */
+.product-form__input--pill input[type="radio"]:checked + label {
+  border-color: rgba(var(--color-foreground), 1);
+  background: rgba(var(--color-foreground), 1);
+  color: rgb(var(--color-background));
+  font-weight: 500;
+}
+
+/* Disabled/sold out size */
+.product-form__input--pill input[type="radio"]:disabled + label {
+  opacity: 0.3;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.product-form__input--pill input[type="radio"]:disabled + label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: rgba(var(--color-foreground), 0.4);
+  transform: rotate(-15deg);
+}
+
+/* Hide radio button */
+.product-form__input--pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==============================================================================
+   Selected Value Display
+   ============================================================================== */
+
+.product-form__input legend [data-selected-value] {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+/* ==============================================================================
+   Responsive Adjustments
+   ============================================================================== */
+
+@media screen and (max-width: 749px) {
+  .product-form__input--swatch input[type="radio"] + label {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .product-form__input--pill input[type="radio"] + label {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+}
+
+/* ==============================================================================
+   Variant Error Messages
+   ============================================================================== */
+
+.product-form__error-message-wrapper {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+.product-form__error-message {
+  font-size: 1.2rem;
+  color: rgb(200, 0, 0);
+  letter-spacing: 0.02em;
+}
