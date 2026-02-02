@@ -1,44 +1,33 @@
-<h1 align="center">
-  Aura Luxury Store
-</h1>
+# Aura Luxury Store Theme
 
-<p align="center">
-  Custom Shopify theme built on <a href="https://github.com/Shopify/dawn">Dawn</a>
-</p>
+Custom Shopify theme built on Shopify Dawn (v15.4.1) with luxury styling and tailored components for Aura Luxury Store.
 
-> **About**: This theme is based on Shopify's Dawn theme (v15.4.1) with custom luxury styling for Aura Luxury Store.
+## Overview
 
-## Getting started
+This theme extends Dawn with brand-specific visual styling, refined product presentation, and additional UI components while keeping Dawn’s performance and accessibility foundations intact.
 
-### Prerequisites
+## Key customizations
 
-Before starting, ensure you have the latest Shopify CLI installed:
+- Luxury design layer (`assets/aura-luxury-product.css`, `assets/aura-luxury-variants.css`)
+- Enhanced product card styling and interactions
+- Brand-aligned color system and typography tweaks
+- Component-level CSS and JavaScript aligned to Dawn architecture
 
-- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) – helps you download, upload, preview themes, and streamline your workflows
+## Requirements
 
-If you use VS Code:
+- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli)
+- [Shopify Liquid VS Code extension](https://shopify.dev/docs/storefronts/themes/tools/shopify-liquid-vscode) (recommended)
 
-- [Shopify Liquid VS Code Extension](https://shopify.dev/docs/storefronts/themes/tools/shopify-liquid-vscode) – provides syntax highlighting, linting, inline documentation, and auto-completion specifically designed for Liquid templates
+## Development workflow
 
-### Clone
+1. Authenticate with Shopify CLI.
+2. Run the theme preview server.
 
-Clone this repository using Git or Shopify CLI:
-
-```bash
-git clone git@github.com:Shopify/skeleton-theme.git
-# or
-shopify theme init
 ```
-
-### Preview
-
-Preview this theme using Shopify CLI:
-
-```bash
 shopify theme dev
 ```
 
-## Theme architecture
+## Project structure
 
 ```bash
 .
@@ -49,18 +38,16 @@ shopify theme dev
 ├── locales         # Translation files for theme internationalization
 ├── sections        # Modular full-width page components
 ├── snippets        # Reusable Liquid code or HTML fragments
-└── templates       # Templates combining sections to define page structures
+└── templates       # JSON templates composing sections and blocks per page
 ```
 
-To learn more, refer to the [theme architecture documentation](https://shopify.dev/docs/storefronts/themes/architecture).
+See the [Shopify theme architecture documentation](https://shopify.dev/docs/storefronts/themes/architecture) for details.
 
 ### Templates
 
 [Templates](https://shopify.dev/docs/storefronts/themes/architecture/templates#template-types) control what's rendered on each type of page in a theme.
 
-The Skeleton Theme scaffolds [JSON templates](https://shopify.dev/docs/storefronts/themes/architecture/templates/json-templates) to make it easy for merchants to customize their store.
-
-None of the template types are required, and not all of them are included in the Skeleton Theme. Refer to the [template types reference](https://shopify.dev/docs/storefronts/themes/architecture/templates#template-types) for a full list.
+This theme uses [JSON templates](https://shopify.dev/docs/storefronts/themes/architecture/templates/json-templates) to support flexible, merchant-editable layouts.
 
 ### Sections
 
@@ -74,7 +61,7 @@ Sections are made customizable by including a `{% schema %}` in the body. For mo
 
 Blocks are made customizable by including a `{% schema %}` in the body. For more information, refer to the [block schema documentation](https://shopify.dev/docs/storefronts/themes/architecture/blocks/theme-blocks/schema).
 
-## Schemas
+## Schema guidelines
 
 When developing components defined by schema settings, we recommend these guidelines to simplify your code:
 
@@ -137,19 +124,14 @@ When developing components defined by schema settings, we recommend these guidel
   {% endschema %}
   ```
 
-## CSS & JavaScript
+## CSS and JavaScript
 
 For CSS and JavaScript, we recommend using the [`{% stylesheet %}`](https://shopify.dev/docs/api/liquid/tags#stylesheet) and [`{% javascript %}`](https://shopify.dev/docs/api/liquid/tags/javascript) tags. They can be included multiple times, but the code will only appear once.
 
 ### `critical.css`
 
-The Skeleton Theme explicitly separates essential CSS necessary for every page into a dedicated `critical.css` file.
+This theme keeps essential CSS in a dedicated `critical.css` file to ensure fast initial rendering.
 
-## Documentation
+## Documentation and references
 
-- **[AGENTS.md](./AGENTS.md)** - Development guidelines and Liquid best practices
-
-## License
-
-This theme is open-sourced under the [MIT](./LICENSE.md) License.
-
+- [AGENTS.md](./AGENTS.md) - Development guidelines and Liquid best practices
