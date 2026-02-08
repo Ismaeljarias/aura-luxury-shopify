@@ -12,6 +12,27 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "testimonial_app_testimonials_Ukc7PH": {
+          "type": "shopify://apps/testimonial-app/blocks/testimonials/019c3e83-50ed-729f-b2de-e019e359ed17",
+          "settings": {
+            "avatar_1": "shopify://shop_images/women-10.png",
+            "name_1": "Pepa",
+            "rating_1": 2,
+            "review_1": "Not so good",
+            "name_2": "",
+            "rating_2": 5,
+            "review_2": "",
+            "name_3": "",
+            "rating_3": 5,
+            "review_3": "",
+            "name_4": "",
+            "rating_4": 5,
+            "review_4": "",
+            "name_5": "",
+            "rating_5": 5,
+            "review_5": ""
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -36,10 +57,6 @@
             "size_guide_url": ""
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -56,7 +73,8 @@
           "settings": {
             "heading": "Composition",
             "icon": "leaf",
-            "content": "<p>Hand-stitched in our Italian atelier, this overcoat is crafted from the finest Mongolian cashmere, offering an unparalleled softness and a structured, timeless silhouette. A masterpiece of silent luxury, designed for longevity across generations.</p>"
+            "content": "<p>Hand-stitched in our Italian atelier, this overcoat is crafted from the finest Mongolian cashmere, offering an unparalleled softness and a structured, timeless silhouette. A masterpiece of silent luxury, designed for longevity across generations.</p>",
+            "page": ""
           }
         },
         "collapsible_tab_care": {
@@ -64,7 +82,8 @@
           "settings": {
             "heading": "Care instructions",
             "icon": "washing",
-            "content": "<p>Dry clean only. Store in a breathable garment bag. Avoid prolonged exposure to direct sunlight.</p>"
+            "content": "<p>Dry clean only. Store in a breathable garment bag. Avoid prolonged exposure to direct sunlight.</p>",
+            "page": ""
           }
         },
         "collapsible_tab_shipping": {
@@ -72,7 +91,8 @@
           "settings": {
             "heading": "Shipping & returns",
             "icon": "truck",
-            "content": "<p>Complimentary shipping on all orders. Free returns within 30 days. All items are carefully packaged in our signature boxes.</p>"
+            "content": "<p>Complimentary shipping on all orders. Free returns within 30 days. All items are carefully packaged in our signature boxes.</p>",
+            "page": ""
           }
         },
         "share": {
@@ -83,6 +103,7 @@
         }
       },
       "block_order": [
+        "testimonial_app_testimonials_Ukc7PH",
         "vendor",
         "title",
         "price",
