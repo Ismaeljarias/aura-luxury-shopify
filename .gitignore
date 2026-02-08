@@ -16,8 +16,5 @@ node_modules/
 release
 *.zip
 
-# AI_INSTRUCTIONS.md
-AI_INSTRUCTIONS.md
-
-# COPILOT_INSTRUCTIONS.md
-COPILOT_INSTRUCTIONS.md
+# OPENCODE
+.opencode/
