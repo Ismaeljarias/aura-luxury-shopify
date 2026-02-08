@@ -17,6 +17,10 @@
           "settings": {
             "arrow_color": "#c2ba35",
             "arrow_hover_color": "#e7e183",
+            "dot_color": "#cbd5e1",
+            "dot_active_color": "#e7e183",
+            "dot_hover_color": "#e7e183",
+            "avatar_1": "shopify://shop_images/women-10.png",
             "name_1": "Sarah Johnson",
             "rating_1": "5",
             "review_1": "Absolutely love this product!",
