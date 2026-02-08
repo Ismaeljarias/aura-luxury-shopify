@@ -12,23 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "testimonial_app_testimonials_whcBec": {
-          "type": "shopify://apps/testimonial-app/blocks/testimonials/019c3e83-50ed-729f-b2de-e019e359ed17",
-          "settings": {
-            "arrow_color": "#1f2937",
-            "arrow_hover_color": "#2563eb",
-            "avatar_1": "shopify://shop_images/women-9.png",
-            "name_1": "Sarah Johnson",
-            "rating_1": "5",
-            "review_1": "Absolutely love this product!",
-            "name_2": "Michael Chen",
-            "rating_2": "4",
-            "review_2": "Great value for money!",
-            "name_3": "Emma Davis",
-            "rating_3": "5",
-            "review_3": "Perfect! Exactly what I needed."
-          }
-        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -99,7 +82,6 @@
         }
       },
       "block_order": [
-        "testimonial_app_testimonials_whcBec",
         "vendor",
         "title",
         "price",
