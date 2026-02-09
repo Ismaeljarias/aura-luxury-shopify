@@ -165,6 +165,29 @@
     },
     "17706782502cf9a00c": {
       "type": "apps",
+      "blocks": {
+        "sections_app_faq_accordion_n7jcPJ": {
+          "type": "shopify://apps/sections-app/blocks/faq-accordion/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "subheading": "Find answers to common questions about our products and services",
+            "allow_multiple": false,
+            "faq_1_question": "What is your shipping policy?",
+            "faq_1_answer": "<p>We offer free standard shipping on all orders over $50. Orders are typically processed within 1-2 business days.</p>",
+            "faq_2_question": "What is your return policy?",
+            "faq_2_answer": "<p>We accept returns within 30 days of purchase. Items must be unused and in their original packaging.</p>",
+            "faq_3_question": "Do you offer international shipping?",
+            "faq_3_answer": "<p>Yes, we ship to most countries worldwide. Shipping costs and delivery times vary by location.</p>",
+            "faq_4_question": "How can I track my order?",
+            "faq_4_answer": "<p>Once your order ships, you will receive a tracking number via email.</p>",
+            "faq_5_question": "What payment methods do you accept?",
+            "faq_5_answer": "<p>We accept all major credit cards, PayPal, Apple Pay, and Google Pay.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "sections_app_faq_accordion_n7jcPJ"
+      ],
       "settings": {
         "include_margins": true
       }
