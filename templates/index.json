@@ -158,9 +158,34 @@
         "heading": "The AURA Philosophy",
         "quote": "We believe in the longevity of style. In a world of fast trends, we choose the slow path—perfection through patience.",
         "show_divider": true,
-        "background_color": "#F5F3F0",
+        "background_color": "#f5f3f0",
         "padding_top": 96,
         "padding_bottom": 96
+      }
+    },
+    "17706782502cf9a00c": {
+      "type": "apps",
+      "blocks": {
+        "sections_app_hero_banner_NezNzr": {
+          "type": "shopify://apps/sections-app/blocks/hero-banner/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "image": "shopify://shop_images/unnamed.png",
+            "video_url": "https://www.youtube.com/watch?v=KtKX7hk3hHQ",
+            "overlay_opacity": 60,
+            "heading": "Welcome to Our Store",
+            "subheading": "Discover amazing products and exceptional service",
+            "button_text": "Shop Now",
+            "button_link": "https://www.youtube.com/watch?v=KtKX7hk3hHQ",
+            "alignment": "center",
+            "height": "large"
+          }
+        }
+      },
+      "block_order": [
+        "sections_app_hero_banner_NezNzr"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
@@ -168,6 +193,7 @@
     "image_banner",
     "rich_text_media_rbjRBz",
     "featured_collection",
-    "brand_philosophy_HjAxfh"
+    "brand_philosophy_HjAxfh",
+    "17706782502cf9a00c"
   ]
 }
