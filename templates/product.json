@@ -146,57 +146,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "17707791044c85f580": {
-      "type": "apps",
-      "blocks": {
-        "sections_app_testimonials_slider_yRYK3L": {
-          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
-          "settings": {
-            "heading": "What Our Customers Say",
-            "autoplay": false,
-            "name": "Sarah Johnson",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
-          }
-        },
-        "sections_app_testimonials_slider_tDaLRk": {
-          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
-          "settings": {
-            "heading": "What Our Customers Say",
-            "autoplay": false,
-            "name": "Sarah Johnson",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
-          }
-        },
-        "sections_app_testimonials_slider_CQFJEN": {
-          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
-          "settings": {
-            "heading": "What Our Customers Say",
-            "autoplay": false,
-            "name": "Sarah Johnson",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
-          }
-        }
-      },
-      "block_order": [
-        "sections_app_testimonials_slider_yRYK3L",
-        "sections_app_testimonials_slider_tDaLRk",
-        "sections_app_testimonials_slider_CQFJEN"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
-    "related-products",
-    "17707791044c85f580"
+    "related-products"
   ]
 }
