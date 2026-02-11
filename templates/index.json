@@ -162,19 +162,12 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
-    },
-    "17706782502cf9a00c": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "image_banner",
     "rich_text_media_rbjRBz",
     "featured_collection",
-    "brand_philosophy_HjAxfh",
-    "17706782502cf9a00c"
+    "brand_philosophy_HjAxfh"
   ]
 }
