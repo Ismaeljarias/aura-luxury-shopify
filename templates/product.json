@@ -12,6 +12,28 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "sections_app_testimonials_slider_Mrp6nh": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
+        "sections_app_testimonials_slider_ATFWLW": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -82,6 +104,8 @@
         }
       },
       "block_order": [
+        "sections_app_testimonials_slider_Mrp6nh",
+        "sections_app_testimonials_slider_ATFWLW",
         "vendor",
         "title",
         "price",
@@ -129,6 +153,29 @@
     "177109738527c21d76": {
       "type": "apps",
       "blocks": {
+        "sections_app_testimonials_slider_Dd83qx": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
+        "sections_app_testimonials_slider_LtracK": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "avatar": "shopify://shop_images/women-5.png",
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 4,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
         "sections_app_testimonials_slider_9UjJAB": {
           "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
           "settings": {
@@ -155,6 +202,8 @@
         }
       },
       "block_order": [
+        "sections_app_testimonials_slider_Dd83qx",
+        "sections_app_testimonials_slider_LtracK",
         "sections_app_testimonials_slider_9UjJAB",
         "sections_app_testimonials_slider_6LwtiB"
       ],
