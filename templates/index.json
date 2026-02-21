@@ -162,66 +162,12 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
-    },
-    "app_testimonials_slider_tLREQL": {
-      "type": "app-testimonials-slider",
-      "blocks": {
-        "testimonial_KgBQUQ": {
-          "type": "testimonial",
-          "settings": {
-            "avatar": "shopify://shop_images/women-10.png",
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_hUdcPn": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_fGByhA": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_qDpLCk": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Jane Smith",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>Highly recommend this product to everyone.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_KgBQUQ",
-        "testimonial_hUdcPn",
-        "testimonial_fGByhA",
-        "testimonial_qDpLCk"
-      ],
-      "name": "App Testimonials Slider",
-      "settings": {
-        "heading": "What Our Customers Say",
-        "autoplay": false
-      }
     }
   },
   "order": [
     "image_banner",
     "rich_text_media_rbjRBz",
     "featured_collection",
-    "brand_philosophy_HjAxfh",
-    "app_testimonials_slider_tLREQL"
+    "brand_philosophy_HjAxfh"
   ]
 }
