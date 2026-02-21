@@ -169,6 +169,7 @@
         "testimonial_KgBQUQ": {
           "type": "testimonial",
           "settings": {
+            "avatar": "shopify://shop_images/women-10.png",
             "name": "Customer Name",
             "role": "Verified Buyer",
             "rating": 5,
