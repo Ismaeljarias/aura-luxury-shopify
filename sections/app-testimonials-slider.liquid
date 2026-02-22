@@ -9,12 +9,7 @@
     {% endif %}
     
     <div class="testimonials-slider__wrapper">
-      <div 
-        class="testimonials-slider__track" 
-        data-autoplay="{{ section.settings.autoplay }}"
-        data-count="{{ section.blocks.size }}"
-        {% if section.blocks.size > 3 %}data-slider="true"{% endif %}
-      >
+      <div class="testimonials-slider__track" data-autoplay="{{ section.settings.autoplay }}">
         {% for block in section.blocks %}
           {% if block.type == 'testimonial' %}
             <div class="testimonial-card" {{ block.shopify_attributes }}>
@@ -53,7 +48,7 @@
         {% endfor %}
       </div>
       
-      {% if section.blocks.size > 3 %}
+      {% if section.blocks.size > 1 %}
         <div class="testimonials-slider__controls">
           <button
             class="testimonials-slider__button testimonials-slider__button--prev"
@@ -70,7 +65,6 @@
             ›
           </button>
         </div>
-        <div class="testimonials-slider__dots" aria-label="Slider navigation"></div>
       {% endif %}
     </div>
   </div>

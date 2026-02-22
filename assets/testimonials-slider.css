@@ -20,43 +20,20 @@
 .testimonials-slider__wrapper {
   position: relative;
   overflow: hidden;
+  padding: 0 3rem;
 }
 
-/* Default: show all cards in a grid (1-3 testimonials) */
 .testimonials-slider__track {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
-}
-
-/* 2 testimonials: 50% each */
-.testimonials-slider__track[data-count="2"] {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* 3 testimonials: 33.33% each */
-.testimonials-slider__track[data-count="3"] {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* 4+ testimonials: activate slider mode */
-.testimonials-slider__track[data-slider="true"] {
   display: flex;
   gap: 2rem;
   transition: transform var(--app-transition);
   scroll-behavior: smooth;
-  flex-wrap: nowrap;
-  overflow: visible;
-}
-
-.testimonials-slider__track[data-slider="true"] .testimonial-card {
-  flex: 0 0 auto;
-  min-width: 280px;
-  max-width: 400px;
-  width: 100%;
 }
 
 .testimonial-card {
+  flex: 0 0 100%;
+  max-width: 600px;
+  margin: 0 auto;
   background: var(--app-color-background);
   border-radius: var(--app-border-radius);
   padding: 2rem;
@@ -145,55 +122,14 @@
   cursor: not-allowed;
 }
 
-.testimonials-slider__dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.testimonials-slider__dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--app-color-border);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: all var(--app-transition);
-}
-
-.testimonials-slider__dot:hover,
-.testimonials-slider__dot:focus {
-  background: var(--app-color-secondary);
-}
-
-.testimonials-slider__dot.active {
-  background: var(--app-color-primary);
-}
-
-.testimonials-slider__dot:focus-visible {
-  outline: 2px solid var(--app-color-primary);
-  outline-offset: 2px;
-}
-
-/* Responsive: stack on mobile for 2-3 testimonials */
-@media (max-width: 768px) {
-  .testimonials-slider__track[data-count="2"],
-  .testimonials-slider__track[data-count="3"] {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Responsive: 2 columns on tablet for 3 testimonials */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .testimonials-slider__track[data-count="3"] {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 1rem);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .testimonials-slider__track[data-slider="true"] {
+  .testimonials-slider__track {
     transition: none;
     scroll-behavior: auto;
   }

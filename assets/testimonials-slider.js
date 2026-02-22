@@ -1,34 +1,26 @@
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
   const sliders = new Map();
 
   function initTestimonialsSlider(sectionId) {
-    const section = document.querySelector(`.testimonials-slider[data-section-id="${sectionId}"]`);
+    const section = document.querySelector(
+      `.testimonials-slider[data-section-id="${sectionId}"]`,
+    );
     if (!section) return;
 
-    const wrapper = section.querySelector('.testimonials-slider__wrapper');
-    const track = section.querySelector('.testimonials-slider__track');
-    const prevBtn = section.querySelector('.testimonials-slider__button--prev');
-    const nextBtn = section.querySelector('.testimonials-slider__button--next');
-    const dotsContainer = section.querySelector('.testimonials-slider__dots');
-    
-    if (!track || !wrapper) return;
+    const track = section.querySelector(".testimonials-slider__track");
+    const prevBtn = section.querySelector(".testimonials-slider__button--prev");
+    const nextBtn = section.querySelector(".testimonials-slider__button--next");
 
-    const cards = track.querySelectorAll('.testimonial-card');
+    if (!track) return;
+
+    const cards = track.querySelectorAll(".testimonial-card");
     if (cards.length === 0) return;
 
-    // Only activate slider mode if there are 4+ testimonials
-    const isSliderMode = track.dataset.slider === 'true';
-    if (!isSliderMode) {
-      // Static grid mode (1-3 testimonials)
-      return;
-    }
-
-    let currentPage = 0;
+    let currentIndex = 0;
     let autoplayInterval = null;
-    const autoplay = track.dataset.autoplay === 'true';
-    let itemsPerPage = 1;
+    const autoplay = track.dataset.autoplay === "true";
 
     // Clean up existing instance
     if (sliders.has(sectionId)) {
@@ -36,132 +28,54 @@
     }
 
     const slider = {
-      currentPage,
+      currentIndex,
       autoplayInterval,
       prevBtn,
       nextBtn,
       track,
       cards,
-      dots: []
     };
 
     sliders.set(sectionId, slider);
 
-    // Calculate how many items fit based on available space
-    function calculateItemsPerPage() {
-      const wrapperWidth = wrapper.offsetWidth;
-      const minCardWidth = 280; // Minimum card width
-      const gap = 32; // 2rem gap
-      
-      // Calculate how many cards can fit
-      let itemsFit = Math.floor((wrapperWidth + gap) / (minCardWidth + gap));
-      
-      // Ensure at least 1 and max 3 cards visible
-      itemsFit = Math.max(1, Math.min(3, itemsFit));
-      
-      return itemsFit;
-    }
-    
-    // Adjust card widths to fit perfectly
-    function adjustCardSizes() {
-      const wrapperWidth = wrapper.offsetWidth;
-      const gap = 32; // 2rem
-      const totalGaps = (itemsPerPage - 1) * gap;
-      const cardWidth = (wrapperWidth - totalGaps) / itemsPerPage;
-      
-      cards.forEach(card => {
-        card.style.flex = `0 0 ${cardWidth}px`;
-        card.style.width = `${cardWidth}px`;
-      });
-    }
-
-    // Calculate total number of pages
-    function getTotalPages() {
-      return Math.ceil(cards.length / itemsPerPage);
-    }
-
-    // Create dots based on number of pages
-    function createDots() {
-      if (!dotsContainer) return;
-      
-      dotsContainer.innerHTML = '';
-      slider.dots = [];
-      
-      const totalPages = getTotalPages();
-      
-      for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'testimonials-slider__dot';
-        dot.setAttribute('aria-label', `Go to page ${i + 1}`);
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToPage(i));
-        dotsContainer.appendChild(dot);
-        slider.dots.push(dot);
-      }
-    }
-
     function updateSlider() {
-      // Calculate offset based on current page and items per page
-      const firstCardIndex = currentPage * itemsPerPage;
-      
-      // Get the actual position of the first card in the current page
-      if (cards[firstCardIndex]) {
-        const offset = -cards[firstCardIndex].offsetLeft;
-        track.style.transform = `translateX(${offset}px)`;
-      }
-      
-      const totalPages = getTotalPages();
-      
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
       if (prevBtn) {
-        prevBtn.disabled = currentPage === 0;
+        prevBtn.disabled = currentIndex === 0;
       }
       if (nextBtn) {
-        nextBtn.disabled = currentPage >= totalPages - 1;
+        nextBtn.disabled = currentIndex === cards.length - 1;
       }
 
-      // Update dots
-      slider.dots.forEach((dot, index) => {
-        if (index === currentPage) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-
-      slider.currentPage = currentPage;
-    }
-
-    function goToPage(pageIndex) {
-      const totalPages = getTotalPages();
-      currentPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
-      updateSlider();
-      stopAutoplay();
+      slider.currentIndex = currentIndex;
     }
 
     function goToNext() {
-      const totalPages = getTotalPages();
-      if (currentPage < totalPages - 1) {
-        currentPage++;
+      if (currentIndex < cards.length - 1) {
+        currentIndex++;
       } else {
-        currentPage = 0; // Loop back to start
+        currentIndex = 0;
       }
       updateSlider();
     }
 
     function goToPrev() {
-      const totalPages = getTotalPages();
-      if (currentPage > 0) {
-        currentPage--;
+      if (currentIndex > 0) {
+        currentIndex--;
       } else {
-        currentPage = totalPages - 1; // Loop to end
+        currentIndex = cards.length - 1;
       }
       updateSlider();
     }
 
     function startAutoplay() {
       if (!autoplay) return;
-      
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
       if (prefersReducedMotion) return;
 
       stopAutoplay();
@@ -177,53 +91,26 @@
       }
     }
 
-    function recalculate() {
-      const newItemsPerPage = calculateItemsPerPage();
-      if (newItemsPerPage !== itemsPerPage) {
-        itemsPerPage = newItemsPerPage;
-        currentPage = 0; // Reset to first page
-      }
-      adjustCardSizes();
-      createDots();
-      updateSlider();
-    }
-
-    function handleResize() {
-      recalculate();
-    }
-
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener("click", () => {
         goToNext();
         stopAutoplay();
       });
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener("click", () => {
         goToPrev();
         stopAutoplay();
       });
     }
 
-    // Handle window resize
-    let resizeTimeout;
-    const debouncedResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleResize, 150);
-    };
-    window.addEventListener('resize', debouncedResize);
-
-    // Initialize
-    recalculate();
+    updateSlider();
     startAutoplay();
 
     // Pause autoplay on hover
-    section.addEventListener('mouseenter', stopAutoplay);
-    section.addEventListener('mouseleave', startAutoplay);
-
-    // Store handlers for cleanup
-    slider.resizeHandler = debouncedResize;
+    section.addEventListener("mouseenter", stopAutoplay);
+    section.addEventListener("mouseleave", startAutoplay);
   }
 
   function cleanupTestimonialsSlider(sectionId) {
@@ -234,11 +121,9 @@
       clearInterval(slider.autoplayInterval);
     }
 
-    if (slider.resizeHandler) {
-      window.removeEventListener('resize', slider.resizeHandler);
-    }
-
-    const section = document.querySelector(`.testimonials-slider[data-section-id="${sectionId}"]`);
+    const section = document.querySelector(
+      `.testimonials-slider[data-section-id="${sectionId}"]`,
+    );
     if (section) {
       const newSection = section.cloneNode(true);
       section.parentNode.replaceChild(newSection, section);
@@ -248,8 +133,8 @@
   }
 
   // Initialize on load
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.testimonials-slider').forEach(section => {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".testimonials-slider").forEach((section) => {
       const sectionId = section.dataset.sectionId;
       if (sectionId) {
         initTestimonialsSlider(sectionId);
@@ -258,11 +143,11 @@
   });
 
   // Theme Editor events
-  document.addEventListener('shopify:section:load', function(e) {
+  document.addEventListener("shopify:section:load", function (e) {
     initTestimonialsSlider(e.detail.sectionId);
   });
 
-  document.addEventListener('shopify:section:unload', function(e) {
+  document.addEventListener("shopify:section:unload", function (e) {
     cleanupTestimonialsSlider(e.detail.sectionId);
   });
 })();
