@@ -1,0 +1,61 @@
+/* Base styles for app sections */
+
+:root {
+  --app-color-primary: #000;
+  --app-color-secondary: #666;
+  --app-color-border: #e5e5e5;
+  --app-color-background: #fff;
+  --app-spacing-base: 1rem;
+  --app-spacing-section: 4rem;
+  --app-border-radius: 0.5rem;
+  --app-transition: 0.3s ease;
+}
+
+.app-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--app-color-primary);
+  color: var(--app-color-background);
+  text-decoration: none;
+  border-radius: var(--app-border-radius);
+  transition: opacity var(--app-transition);
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.app-button:hover,
+.app-button:focus {
+  opacity: 0.8;
+}
+
+.app-button:focus-visible {
+  outline: 2px solid var(--app-color-primary);
+  outline-offset: 2px;
+}
+
+.app-stars {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.app-stars__star--filled {
+  color: #ffc107;
+}
+
+.app-stars__star--empty {
+  color: var(--app-color-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
