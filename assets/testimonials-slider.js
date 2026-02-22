@@ -30,7 +30,14 @@
     let currentPage = 0;
     let autoplayInterval = null;
     const autoplay = track.dataset.autoplay === "true";
-    const itemsPerPage = 3; // Always show 3 testimonials per page
+
+    // Calculate items per page based on viewport width
+    function getItemsPerPage() {
+      const width = window.innerWidth;
+      if (width < 768) return 1; // Mobile: 1 card
+      if (width < 1024) return 2; // Tablet: 2 cards
+      return 3; // Desktop: 3 cards
+    }
 
     // Clean up existing instance
     if (sliders.has(sectionId)) {
@@ -49,8 +56,9 @@
 
     sliders.set(sectionId, slider);
 
-    // Calculate total number of pages (batches of 3)
+    // Calculate total number of pages (batches based on screen size)
     function getTotalPages() {
+      const itemsPerPage = getItemsPerPage();
       return Math.ceil(cards.length / itemsPerPage);
     }
 
@@ -75,8 +83,8 @@
     }
 
     function updateSlider() {
-      // Calculate offset based on current page
-      // Each page shows 3 cards, so we move by (cardWidth + gap) * 3 * currentPage
+      // Calculate offset based on current page and items per page
+      const itemsPerPage = getItemsPerPage();
       const firstCardIndex = currentPage * itemsPerPage;
 
       if (cards[firstCardIndex]) {
@@ -172,6 +180,16 @@
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
+        // Recalculate current page on resize to prevent going out of bounds
+        const totalPages = getTotalPages();
+        currentPage = Math.min(currentPage, totalPages - 1);
+
+        // Recreate dots if number of pages changed
+        const currentDotsCount = slider.dots.length;
+        if (currentDotsCount !== totalPages) {
+          createDots();
+        }
+
         updateSlider();
       }, 150);
     };
