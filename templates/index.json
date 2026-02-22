@@ -162,95 +162,12 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
-    },
-    "app_testimonials_slider_fKfrmw": {
-      "type": "app-testimonials-slider",
-      "blocks": {
-        "testimonial_NNqV3G": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_xNCT6N": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_bcfJNm": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_yryNCf": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_LjaxeT": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Customer Name",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>This product exceeded my expectations!</p>"
-          }
-        },
-        "testimonial_XbAQd3": {
-          "type": "testimonial",
-          "settings": {
-            "name": "John Doe",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>Amazing quality and fast shipping!</p>"
-          }
-        },
-        "testimonial_93a6Mr": {
-          "type": "testimonial",
-          "settings": {
-            "name": "Jane Smith",
-            "role": "Verified Buyer",
-            "rating": 5,
-            "review": "<p>Highly recommend this product to everyone.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_NNqV3G",
-        "testimonial_xNCT6N",
-        "testimonial_bcfJNm",
-        "testimonial_yryNCf",
-        "testimonial_LjaxeT",
-        "testimonial_XbAQd3",
-        "testimonial_93a6Mr"
-      ],
-      "name": "App Testimonials Slider",
-      "settings": {
-        "heading": "What Our Customers Say",
-        "autoplay": false
-      }
     }
   },
   "order": [
     "image_banner",
     "rich_text_media_rbjRBz",
     "featured_collection",
-    "brand_philosophy_HjAxfh",
-    "app_testimonials_slider_fKfrmw"
+    "brand_philosophy_HjAxfh"
   ]
 }
