@@ -150,7 +150,7 @@
           "enabled": true,
           "modal_delay": 300,
           "button_color": "#000000",
-          "button_text_color": "#FFFFFF"
+          "button_text_color": "#ffffff"
         }
       }
     },
