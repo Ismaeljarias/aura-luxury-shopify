@@ -142,15 +142,15 @@
     },
     "content_for_index": [],
     "blocks": {
-      "9783274459004657471": {
-        "type": "shopify://apps/easy-upsell/blocks/app-embed/019cca7b-e1be-7136-9f75-3832aaed9665",
+      "14910488080266550129": {
+        "type": "shopify://apps/easy-upsell/blocks/app-embed/019cf834-d582-7d59-acab-f7ca56eaaed5",
         "disabled": false,
         "settings": {
           "app_url": "",
           "enabled": true,
-          "modal_delay": 300,
+          "modal_delay": 100,
           "button_color": "#000000",
-          "button_text_color": "#ffffff"
+          "button_text_color": "#FFFFFF"
         }
       }
     },
