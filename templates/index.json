@@ -162,12 +162,124 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
+    },
+    "1773692228711d18b2": {
+      "type": "apps",
+      "blocks": {
+        "sections_app_testimonials_slider_JiRx7f": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
+        "sections_app_testimonials_slider_YGj9rC": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
+        "sections_app_testimonials_slider_Cdtbf6": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        },
+        "sections_app_testimonials_slider_wDexKE": {
+          "type": "shopify://apps/sections-app/blocks/testimonials-slider/019c44a5-61b9-7380-8551-dac070a01b19",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "autoplay": false,
+            "name": "Sarah Johnson",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "Absolutely love this product! The quality is outstanding and it arrived faster than expected."
+          }
+        }
+      },
+      "block_order": [
+        "sections_app_testimonials_slider_JiRx7f",
+        "sections_app_testimonials_slider_YGj9rC",
+        "sections_app_testimonials_slider_Cdtbf6",
+        "sections_app_testimonials_slider_wDexKE"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "app_testimonials_slider_7BeTfX": {
+      "type": "app-testimonials-slider",
+      "blocks": {
+        "testimonial_hMywaA": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Nizao",
+            "role": "Verified Buyer",
+            "rating": 3,
+            "review": "<p>This product exceeded my expectations! a,jhbdasjhlbvdljhasbdhmbvwdhmbdhdbvhldjs,saffsafsafdsfff</p>"
+          }
+        },
+        "testimonial_x4kCaH": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Customer Name",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>This product exceeded my expectations!</p>"
+          }
+        },
+        "testimonial_P43fyB": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Doe",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>Amazing quality and fast shipping!</p>"
+          }
+        },
+        "testimonial_f8hFwH": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jane Smith",
+            "role": "Verified Buyer",
+            "rating": 5,
+            "review": "<p>Highly recommend this product to everyone.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_hMywaA",
+        "testimonial_x4kCaH",
+        "testimonial_P43fyB",
+        "testimonial_f8hFwH"
+      ],
+      "name": "App Testimonials Slider",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "autoplay": false
+      }
     }
   },
   "order": [
     "image_banner",
     "rich_text_media_rbjRBz",
     "featured_collection",
-    "brand_philosophy_HjAxfh"
+    "brand_philosophy_HjAxfh",
+    "1773692228711d18b2",
+    "app_testimonials_slider_7BeTfX"
   ]
 }
