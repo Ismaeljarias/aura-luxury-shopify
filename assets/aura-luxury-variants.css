@@ -12,12 +12,10 @@
 
 .product-form__input--swatch {
   margin: 2rem 0;
-}
-
-.product-form__input--swatch .variant-input-wrapper {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 /* Custom square color swatches */
@@ -69,12 +67,10 @@
 
 .product-form__input--pill {
   margin: 2rem 0;
-}
-
-.product-form__input--pill .variant-input-wrapper {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 /* Size buttons - Small Squares */
@@ -95,6 +91,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 0;
+  flex-shrink: 0;
 }
 
 .product-form__input--pill input[type="radio"] + label:hover {
@@ -136,6 +133,17 @@
 }
 
 /* ==============================================================================
+   Legend full-width in flex fieldset
+   ============================================================================== */
+
+.product-form__input--pill legend,
+.product-form__input--swatch legend {
+  width: 100%;
+  flex-basis: 100%;
+  margin-bottom: 0.4rem;
+}
+
+/* ==============================================================================
    Selected Value Display
    ============================================================================== */
 
@@ -151,11 +159,16 @@
    ============================================================================== */
 
 @media screen and (max-width: 749px) {
+  .product-form__input--swatch,
+  .product-form__input--pill {
+    gap: 0.6rem;
+  }
+
   .product-form__input--swatch input[type="radio"] + label {
     width: 3.5rem;
     height: 3.5rem;
   }
-  
+
   .product-form__input--pill input[type="radio"] + label {
     width: 4.5rem;
     height: 4.5rem;
