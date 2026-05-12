@@ -17,6 +17,32 @@
         "padding_bottom": 36
       }
     },
+    "1778612216822e27f3": {
+      "type": "apps",
+      "blocks": {
+        "easy_upsell_cart_upsell_x7ccPf": {
+          "type": "shopify://apps/easy-upsell/blocks/cart-upsell/019d089a-3b4c-7668-8035-3a29796d1aef",
+          "settings": {
+            "app_url": "https://easy-upsell-production.up.railway.app",
+            "heading": "You might also like",
+            "button_text": "Add",
+            "added_text": "Added!",
+            "bg_color": "#f9fafb",
+            "text_color": "#1a1a1a",
+            "border_color": "#e5e7eb",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff",
+            "badge_color": "#e74c3c"
+          }
+        }
+      },
+      "block_order": [
+        "easy_upsell_cart_upsell_x7ccPf"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
@@ -37,32 +63,6 @@
         "color_scheme": "scheme-1",
         "padding_top": 20,
         "padding_bottom": 40
-      }
-    },
-    "1778612216822e27f3": {
-      "type": "apps",
-      "blocks": {
-        "easy_upsell_cart_upsell_x7ccPf": {
-          "type": "shopify://apps/easy-upsell/blocks/cart-upsell/019d089a-3b4c-7668-8035-3a29796d1aef",
-          "settings": {
-            "app_url": "",
-            "heading": "You might also like",
-            "button_text": "Add",
-            "added_text": "Added!",
-            "bg_color": "#f9fafb",
-            "text_color": "#1a1a1a",
-            "border_color": "#e5e7eb",
-            "button_color": "#000000",
-            "button_text_color": "#ffffff",
-            "badge_color": "#e74c3c"
-          }
-        }
-      },
-      "block_order": [
-        "easy_upsell_cart_upsell_x7ccPf"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },
