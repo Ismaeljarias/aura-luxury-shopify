@@ -36,6 +36,20 @@
             "size_guide_url": ""
           }
         },
+        "easy_upsell_product_upsell_wPe7TC": {
+          "type": "shopify://apps/easy-upsell/blocks/product-upsell/019d089a-3b4c-7668-8035-3a29796d1aef",
+          "settings": {
+            "app_url": "",
+            "button_text": "Add",
+            "added_text": "Added!",
+            "owned_text": "Already added",
+            "bg_color": "#fafafa",
+            "text_color": "#1a1a1a",
+            "border_color": "#e5e7eb",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -86,6 +100,7 @@
         "title",
         "price",
         "variant_picker",
+        "easy_upsell_product_upsell_wPe7TC",
         "buy_buttons",
         "collapsible_tab_composition",
         "collapsible_tab_care",
