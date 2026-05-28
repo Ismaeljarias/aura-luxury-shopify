@@ -27,6 +27,19 @@
           "type": "price",
           "settings": {}
         },
+        "easy_upsell_product_upsell_3pDr4L": {
+          "type": "shopify://apps/easy-upsell/blocks/product-upsell/019d089a-3b4c-7668-8035-3a29796d1aef",
+          "settings": {
+            "button_text": "Add",
+            "added_text": "Added!",
+            "owned_text": "Already added",
+            "bg_color": "#fafafa",
+            "text_color": "#1a1a1a",
+            "border_color": "#e5e7eb",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -85,6 +98,7 @@
         "vendor",
         "title",
         "price",
+        "easy_upsell_product_upsell_3pDr4L",
         "variant_picker",
         "buy_buttons",
         "collapsible_tab_composition",
