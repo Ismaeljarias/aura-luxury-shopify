@@ -12,7 +12,18 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "easy_upsell_product_upsell_My3TtJ": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "easy_upsell_product_upsell_hbftLb": {
           "type": "shopify://apps/easy-upsell/blocks/product-upsell/019d089a-3b4c-7668-8035-3a29796d1aef",
           "settings": {
             "button_text": "Add",
@@ -24,17 +35,6 @@
             "button_color": "#000000",
             "button_text_color": "#ffffff"
           }
-        },
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
         },
         "price": {
           "type": "price",
@@ -95,9 +95,9 @@
         }
       },
       "block_order": [
-        "easy_upsell_product_upsell_My3TtJ",
         "vendor",
         "title",
+        "easy_upsell_product_upsell_hbftLb",
         "price",
         "variant_picker",
         "buy_buttons",
